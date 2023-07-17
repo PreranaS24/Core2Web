@@ -3,12 +3,12 @@ run-name: Java Code Run
 on: [push]
 jobs:
   check-Java-version:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
           distribution: 'oracle'
           java-version: '17'
-      - run: sudo apt install openjdk-17-jdk
+      - run: install openjdk-17-jdk
       - run: java -version
