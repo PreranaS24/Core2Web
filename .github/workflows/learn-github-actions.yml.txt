@@ -1,5 +1,5 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Core2Web
+run-name: Java Code Run
 on: [push]
 jobs:
   check-bats-version:
