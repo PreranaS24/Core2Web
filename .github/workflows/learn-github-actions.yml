@@ -11,4 +11,6 @@ jobs:
     repository: /PreranaS24/Core2Web
     distribution: 'oracle' # See 'Supported distributions' for available options
     java-version: '1.8'
+- run: sudo apt update
+- run: sudo apt install openjdk-8-jdk
 - run: java -version
