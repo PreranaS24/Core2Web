@@ -9,5 +9,6 @@ jobs:
 - uses: actions/setup-java@v3
   with:
     repository: /PreranaS24/Core2Web
+    distribution: 'temurin' # See 'Supported distributions' for available options
     java-version: '1.8'
 - run: java -version
