@@ -10,5 +10,5 @@ jobs:
         with:
           distribution: 'oracle'
           java-version: '17'
-      - run: apt install openjdk-17-jdk
+      - run: sudo apt install openjdk-17-jdk
       - run: java -version
