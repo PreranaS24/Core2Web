@@ -14,4 +14,4 @@ jobs:
     - run: sudo apt install openjdk-8-jdk
    # - run: java ${{$GITHUB_SHA}}
     - run: java -version
-    - run: java ${{ github.event.pull_request.head.sha }}
+    - run: javac ${{ github.event.pull_request.head.sha }}
