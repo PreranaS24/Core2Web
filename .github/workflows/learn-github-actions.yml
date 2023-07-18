@@ -1,7 +1,9 @@
 name: Core2Web
 run-name: Java Code Run
-on: 
+on:
   push:
+    paths:
+      - '**.java'
 jobs:
   GET_CHANGED_FILENAME:
     runs-on: ubuntu-latest
