@@ -1,27 +1,26 @@
-name: Core2Web
+name: Core2Web_Changed_Files
 run-name: Latest Changed file names
 on: [push]
   
 
 jobs:
-  # -------------------------------------------------------------
-  # Event `pull_request`: Returns all changed pull request files.
-  # --------------------------------------------------------------
+  # ----------------------------------------------------------------------------------------------
+  # Event `push`: Compare the preceding remote commit -> to the current commit of the main branch 
+  # ----------------------------------------------------------------------------------------------
   changed_files:
-    # NOTE:
-    # - This is limited to pull_request* events and would raise an error for other events.
-    # - A maximum of 3000 files can be returned.
-    # - For more flexibility and no limitations see "Using local .git history" above.
-
-    runs-on: ubuntu-latest  # windows-latest || macos-latest
+    runs-on: ubuntu-20.04
     name: Test changed-files
-    permissions:
-      push: read
-
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
+      # Example 1
       - name: Get changed files
         id: changed-files
-        uses: actions/checkout@v3
+        uses: tj-actions/changed-files@v37
+
+      # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
 
       - name: List all changed files
         run: |
