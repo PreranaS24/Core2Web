@@ -33,7 +33,8 @@ jobs:
     - name: Retrieve version
       run: |
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
-       
+       echo "{{ $NAME }}"
+      id: version
    # - name: Create Release
      # id: create_release
       #uses: actions/create-release@v1
@@ -42,7 +43,7 @@ jobs:
       #with:
        # tag_name: ${{ env.TAG_NAME }}
 
-    #- run: echo "{{ steps.version.outputs.$TAG_NAME }}"
+    - run: echo "{{ steps.version.outputs.$NAME }}"
       
     #- name: 'Create delta packages for new, modified or deleted metadata'
     #  run: | 
