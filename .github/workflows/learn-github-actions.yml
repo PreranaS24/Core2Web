@@ -32,5 +32,5 @@ jobs:
        echo "TAG_NAME=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_OUTPUT
       id: version   
 
-    - run: echo"${{ steps.version.outputs.TAG_NAME }}"
+    - run: echo ${{ steps.version.outputs.TAG_NAME }}
       
