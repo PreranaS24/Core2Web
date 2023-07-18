@@ -45,9 +45,9 @@ jobs:
       #with:
        # tag_name: ${{ env.TAG_NAME }}
 
-    - run: echo"${{ steps.version.outputs.coverage }}"
+    - run: echo "${{ steps.version.outputs.coverage }}"
     - run: ${{steps.version.outputs.name}}
-    - run: echo"${{steps.version.outputs.name}}"
+    - run: echo "${{steps.version.outputs.name}}" 
     
     - name: Set the value
       id: step_one
@@ -56,7 +56,7 @@ jobs:
     - name: Use the value
       id: step_two
       run: |
-         echo"${{ env.action_state }}" # This will output 'yellow'
+         echo "${{ env.action_state }}" # This will output 'yellow'
       
     #- name: 'Create delta packages for new, modified or deleted metadata'
     #  run: | 
