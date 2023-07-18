@@ -19,8 +19,8 @@ jobs:
     ######- run: echo "{{$GITHUB_SHA}}"
     ######- run: java -version
     #- run: FILE_PAT="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
-    -  run: |
-      git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+    #-  run: |
+          #git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
    #- run: echo "FILE_PAT=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
     #-echo "::workflow-git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{command value}"
 
