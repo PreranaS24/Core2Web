@@ -22,7 +22,7 @@ jobs:
 
 
     - run: echo "FILE_PAT=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
-    #- run: echo "$GITHUB_OUTPUT"
+    - run: echo "$GITHUB_ENV"
     - run: echo "${{ env.FILE_PAT }}"
     - run: echo "$FILE_PAT"
     #- run: echo "${{ github.event.pull_request.head.sha }}"
