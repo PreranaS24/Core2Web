@@ -7,8 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
-    env:
-    GITHUB_TOKEN: ${{ secrets.token }}
+    
     
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
@@ -36,3 +35,12 @@ jobs:
 
     - run: echo "{{ steps.version.outputs.$TAG_NAME }}"
       
+      - name: 'Create delta packages for new, modified or deleted metadata'
+        run: | 
+          echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
+     
+     
+     - name: NEW STEP
+    run: |
+     echo "${{ env.DIFF }}"
+     sfdx sgd:source:delta --to "HEAD" --from ${{ env.DIFF }} --output changed-sources/ --generate-delta --source force-app/
