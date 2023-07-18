@@ -75,11 +75,11 @@ jobs:
       run: |
        echo "${{ env.DIFF }}"
        
-   - name: Run Java Code
-     uses: actions/setup-java@v3
-     with:
-       distribution:  'oracle' # See 'Supported distributions' for available options
-       java-version: '17'
+    - name: Run Java Code
+      uses: actions/setup-java@v3
+      with:
+        distribution:  'oracle' # See 'Supported distributions' for available options
+        java-version: '17'
     
     -run: java ${{ steps.version.outputs.coverage }}
      
