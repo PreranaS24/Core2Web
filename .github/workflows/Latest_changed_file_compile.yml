@@ -1,0 +1,39 @@
+name: Core2Web_Changed_Files_Compile
+run-name: Latest Changed file compile
+on: [push]
+  
+
+jobs:
+  # ----------------------------------------------------------------------------------------------
+  # Event `push`: Compare the preceding remote commit -> to the current commit of the main branch 
+  # ----------------------------------------------------------------------------------------------
+  changed_files:
+    runs-on: ubuntu-20.04
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
+      # Example 1
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v37
+
+      # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+		  
+      - name: Run the last file changed
+        uses: actions/checkout@v3
+        uses: actions/setup-java@v3
+        with:
+        distribution:  'oracle' # See 'Supported distributions' for available options
+        java-version: '17'
+        run: sudo apt update
+        run: sudo apt install openjdk-8-jdk
+        run: java $file
