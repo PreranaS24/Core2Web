@@ -18,7 +18,8 @@ jobs:
     ######- run: echo "{{$GITHUB_SHA}}"
     ######- run: java -version
     #- run: FILE_PAT="$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
-    -  run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+    -  run: |
+      git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
    #- run: echo "FILE_PAT=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
     #-echo "::workflow-git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{command value}"
 
@@ -29,19 +30,26 @@ jobs:
     #- run: echo $FILE_PAT
     #- run: echo "${{ github.event.pull_request.head.sha }}"
     - name: Retrieve version
-      run:  |
-       echo "TAG_NAME=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_OUTPUT
-      id: version   
-
-    - run: echo "{{ steps.version.outputs.$TAG_NAME }}"
-      
-    - name: 'Create delta packages for new, modified or deleted metadata'
-      run: | 
-          mkdir changed-sources
-          echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
-     
-     
-    - name: NEW STEP
       run: |
-       echo "${{ env.DIFF }}"
-       sfdx sgd:source:delta --to "HEAD" --from ${{ env.DIFF }} --output changed-sources/ --generate-delta --source force-app/
+       echo ::set-env name=TAG_NAME::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+       
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.token }}
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+
+    #- run: echo "{{ steps.version.outputs.$TAG_NAME }}"
+      
+    #- name: 'Create delta packages for new, modified or deleted metadata'
+    #  run: | 
+     #     mkdir changed-sources
+      #    echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
+     
+     
+  #  - name: NEW STEP
+   #   run: |
+    #   echo "${{ env.DIFF }}"
+     #  sfdx sgd:source:delta --to "HEAD" --from ${{ env.DIFF }} --output changed-sources/ --generate-delta --source force-app/
