@@ -35,7 +35,7 @@ jobs:
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
        echo "$NAME"
        git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-       echo "::set-output name=coverage::$(pwd)"
+       echo "::set-output name=coverage::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
       id: version
    # - name: Create Release
      # id: create_release
