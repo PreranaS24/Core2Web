@@ -10,6 +10,7 @@ jobs:
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
+        fetch-depth: 2
         ref: ${{ github.event.pull_request.head.sha }}
     #- run: sudo apt update
     #- run: sudo apt install openjdk-8-jdk
