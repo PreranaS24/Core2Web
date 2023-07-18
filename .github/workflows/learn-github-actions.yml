@@ -7,7 +7,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
+    - uses: jitterbit/get-changed-files@v1
+    
       with:
+      # Format of the steps output context.
+    # Can be 'space-delimited', 'csv', or 'json'.
+    # Default: 'space-delimited'
+        format: ''
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
         fetch-depth: 2
