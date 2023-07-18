@@ -16,7 +16,7 @@ jobs:
         java-version: '17'
         fetch-depth: 2
         
-    - name: get file changes
+   # - name: get file changes
       #run: | 
       #    git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
      #   ref: ${{ github.event.pull_request.head.sha }}
