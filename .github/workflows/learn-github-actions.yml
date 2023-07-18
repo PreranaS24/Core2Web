@@ -46,7 +46,7 @@ jobs:
        # tag_name: ${{ env.TAG_NAME }}
 
     #- run: echo"{{steps.version.outputs.$NAME}}"
-    # - run: ${{steps.version.outputs.coverage}}
+     - run: ${{steps.version.outputs.coverage}}
     
     - name: Set the value
       id: step_one
