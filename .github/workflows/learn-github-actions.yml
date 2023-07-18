@@ -85,14 +85,4 @@ jobs:
       run: |
        java ${{ steps.version.outputs.coverage }}
      
-  RUN_JAVA_CODE:
-    needs: GET_CHANGED_FILENAME
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/setup-java@v3
-      with:
-        distribution:  'oracle' # See 'Supported distributions' for available options
-        java-version: '17'
-        
-    - run: java -version
-    - run: java ${{ steps.version.outputs.coverage }}
+  
