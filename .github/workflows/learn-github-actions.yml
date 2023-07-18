@@ -58,11 +58,7 @@ jobs:
       run: |
          echo "${{ env.action_state }}" # This will output 'yellow'
    
-    action "git command" {
-      uses = "srt32/git-actions@v0.0.3"
-      args = "git status"
-      }
-      
+   
     #- name: 'Create delta packages for new, modified or deleted metadata'
     #  run: | 
      #     mkdir changed-sources
