@@ -22,30 +22,9 @@ jobs:
       id: version
       env:
         GITHUB_TOKEN: ${{ secrets.token }}
-  
-
-     - run: echo "${{ steps.version.outputs.coverage }}"
-   # - run: ${{steps.version.outputs.name}}
-   # - run: echo "${{steps.version.outputs.name}}" 
-    
-    #- name: Set the value
-    #  id: step_one
-    #  run: |
-    #   echo "action_state=`git diff-tree --no-commit-id --name-only -r ${{ github.sha }}`" >> "$GITHUB_ENV"
-    #- name: Use the value
-    #  id: step_two
-    #  run: |
-    #     echo "${{ env.action_state }}" # This will output 'yellow'
+        
+    - run: echo "${{ steps.version.outputs.coverage }}"
    
-   
-    #- name: 'Create delta packages for new, modified or deleted metadata'
-    #  run: | 
-              echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
-     
-     
-    #- name: NEW STEP
-    #  run: |
-    #   echo "${{ env.DIFF }}"
        
     - name: Run Java Code
       uses: actions/setup-java@v3
