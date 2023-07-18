@@ -18,10 +18,7 @@ jobs:
     
     - name: Retrieve version
       run: |
-    #   echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{name}"
-    #   echo "$NAME"
-    #   git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-       echo "::set-output name=coverage::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
+             echo "::set-output name=coverage::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
       id: version
       env:
         GITHUB_TOKEN: ${{ secrets.token }}
@@ -29,7 +26,7 @@ jobs:
 
     - run: echo "${{ steps.version.outputs.coverage }}"
    # - run: ${{steps.version.outputs.name}}
-    - run: echo "${{steps.version.outputs.name}}" 
+   # - run: echo "${{steps.version.outputs.name}}" 
     
     #- name: Set the value
     #  id: step_one
