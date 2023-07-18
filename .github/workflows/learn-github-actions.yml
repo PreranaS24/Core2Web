@@ -17,7 +17,7 @@ jobs:
         fetch-depth: 0
         
     - name: get file changes
-        run: | 
+      run: | 
           git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
      #   ref: ${{ github.event.pull_request.head.sha }}
     
