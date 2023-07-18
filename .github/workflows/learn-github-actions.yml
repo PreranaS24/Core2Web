@@ -29,7 +29,9 @@ jobs:
     #- run: echo "$GITHUB_ENV"
     #- run: echo "${{env.FILE_PAT}}"
     #- run: echo $FILE_PAT
+    - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
     #- run: echo "${{ github.event.pull_request.head.sha }}"
+    #git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
     - name: Retrieve version
       run: |
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{name}"
