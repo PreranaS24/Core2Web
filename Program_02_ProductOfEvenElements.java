@@ -5,7 +5,7 @@ class Program2_ProductOfEvenElements_Array{
 
 	public static void main(String[] args){
 
-			System.out.println("Hello World All");
+			System.out.println("Hello World");
 
 		}
 	}
