@@ -27,9 +27,9 @@ jobs:
     #- run: echo "${{env.FILE_PAT}}"
     #- run: echo $FILE_PAT
     #- run: echo "${{ github.event.pull_request.head.sha }}"
-    
-    - run:  |
+    - name: Retrieve version
+      run:  |
     echo "TAG_NAME=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_OUTPUT
-        id: version   
+      id: version   
 
       
