@@ -81,9 +81,9 @@ jobs:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
         
-    -name: Run Java Command
-     run: |
-      java ${{ steps.version.outputs.coverage }}
+    - name: Run Java Command
+      run: |
+       java ${{ steps.version.outputs.coverage }}
      
   RUN_JAVA_CODE:
     needs: GET_CHANGED_FILENAME
