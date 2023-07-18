@@ -33,7 +33,7 @@ jobs:
     - name: Retrieve version
       run: |
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
-       echo "{{ $NAME }}"
+       echo "{{ NAME }}"
       id: version
    # - name: Create Release
      # id: create_release
@@ -44,6 +44,15 @@ jobs:
        # tag_name: ${{ env.TAG_NAME }}
 
     - run: echo "{{ steps.version.outputs.$NAME }}"
+    
+    - name: Set the value
+      id: step_one
+      run: |
+       echo "action_state=yellow" >> "$GITHUB_ENV"
+    - name: Use the value
+      id: step_two
+      run: |
+         echo "${{ env.action_state }}" # This will output 'yellow'
       
     #- name: 'Create delta packages for new, modified or deleted metadata'
     #  run: | 
