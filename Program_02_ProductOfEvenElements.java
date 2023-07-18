@@ -1,4 +1,4 @@
-//WAP to print Product of even elements of Array....
+//WAP to print Product of even elements of Array.
 //
 import java.io.*;
 class Program2_ProductOfEvenElements_Array{
