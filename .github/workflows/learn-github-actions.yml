@@ -37,6 +37,7 @@ jobs:
       
     - name: 'Create delta packages for new, modified or deleted metadata'
       run: | 
+          mkdir changed-sources
           echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
      
      
