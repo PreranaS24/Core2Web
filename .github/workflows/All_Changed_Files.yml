@@ -1,9 +1,7 @@
-name: CI
-
-on:
-  pull_request:
-    branches:
-      - main
+name: Core2Web
+run-name: Latest Changed file names
+on:[push]
+  
 
 jobs:
   # -------------------------------------------------------------
@@ -18,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest  # windows-latest || macos-latest
     name: Test changed-files
     permissions:
-      pull-requests: read
+      push-requests: read
 
     steps:
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v37
+        uses: actions/checkout@v3
 
       - name: List all changed files
         run: |
