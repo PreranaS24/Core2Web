@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    #- uses: actions/setup-java@v3
+    - uses: actions/setup-java@v3
     
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
@@ -16,8 +16,8 @@ jobs:
     
     - run: echo "{{$GITHUB_SHA}}"
     - run: java -version
-    - run: $file = `git diff-tree --no-commit-id --name-only -r ${{ github.sha }}`
-    - run: echo "$file"
+    - run: export FILE_PATH = "$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
+    - run: echo "FILE_PATH"
     #- run: echo "${{ github.event.pull_request.head.sha }}"
     
        
