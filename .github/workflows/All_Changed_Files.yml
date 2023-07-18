@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest  # windows-latest || macos-latest
     name: Test changed-files
     permissions:
-      push-requests: read
+      push: read
 
     steps:
       - name: Get changed files
