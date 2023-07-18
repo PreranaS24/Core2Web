@@ -30,6 +30,9 @@ jobs:
         
         
        - name: compile
+       with:
+        distribution:  'oracle' # See 'Supported distributions' for available options
+        java-version: '17'
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             java file
