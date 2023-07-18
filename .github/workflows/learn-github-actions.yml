@@ -12,12 +12,13 @@ jobs:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
         fetch-depth: 2
-        ref: ${{ github.event.pull_request.head.sha }}
+     #   ref: ${{ github.event.pull_request.head.sha }}
     
     - run: echo "{{$GITHUB_SHA}}"
     - run: java -version
-    - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-    - run: echo "${{ github.event.pull_request.head.sha }}"
+    - run: $file = `git diff-tree --no-commit-id --name-only -r ${{ github.sha }}`
+    - run: echo "$file"
+    #- run: echo "${{ github.event.pull_request.head.sha }}"
     
        
 
