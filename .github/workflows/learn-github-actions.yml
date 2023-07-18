@@ -14,10 +14,10 @@ jobs:
         fetch-depth: 2
         ref: ${{ github.event.pull_request.head.sha }}
     
-    - run: echo "{{$github_sha}}"
-    - run: java -version
-    - run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-    - run: echo "${{ github.event.pull_request.head.sha }}"
+    #- run: echo "{{$github_sha}}"
+    #- run: java -version
+    #- run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+    #- run: echo "${{ github.event.pull_request.head.sha }}"
     
        
 
