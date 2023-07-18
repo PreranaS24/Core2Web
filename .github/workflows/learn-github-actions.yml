@@ -14,7 +14,7 @@ jobs:
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
-        fetch-depth: 2
+        fetch-depth: 0
         
    # - name: get file changes
       #run: | 
@@ -66,13 +66,12 @@ jobs:
          echo "${{ env.action_state }}" # This will output 'yellow'
    
    
-    #- name: 'Create delta packages for new, modified or deleted metadata'
-    #  run: | 
-     #     mkdir changed-sources
-      #    echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
+    - name: 'Create delta packages for new, modified or deleted metadata'
+      run: | 
+              echo "DIFF=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})" >> $GITHUB_ENV
      
      
-  #  - name: NEW STEP
-   #   run: |
-    #   echo "${{ env.DIFF }}"
-     #  sfdx sgd:source:delta --to "HEAD" --from ${{ env.DIFF }} --output changed-sources/ --generate-delta --source force-app/
+    - name: NEW STEP
+      run: |
+       echo "${{ env.DIFF }}"
+     
