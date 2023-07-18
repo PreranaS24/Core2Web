@@ -1,11 +1,11 @@
 name: Core2Web
 run-name: Java Code Run
 on: [push]
-    shell: bash  
 jobs:
   Run-Java-Code:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      shell: bash
       - run: echo "$GITHUB_SHA"
    
