@@ -33,7 +33,7 @@ jobs:
     - name: Retrieve version
       run: |
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
-       echo "{{ NAME }}"
+       echo "{{ $NAME }}"
       id: version
    # - name: Create Release
      # id: create_release
