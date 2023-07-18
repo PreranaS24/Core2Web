@@ -84,4 +84,4 @@ jobs:
         java-version: '17'
         
     - run: java -version
-    - run: java ${{ env.DIFF }}
+    - run: java ${{ steps.version.outputs.coverage }}
