@@ -15,12 +15,9 @@ jobs:
           java-version: '17'
       - run: sudo apt update
       - run: sudo apt install openjdk-17-jdk
-      run: |  
-    echo "LAST_COMMIT_SHA=${{ github.event.pull_request.head.sha }}" >> ${GITHUB_ENV}  
-          - name: Setup Environment (Push)  
-        if: ${{ github.event_name == 'push' }}  
-        shell: bash  
-  run: |  
+     
+       shell: bash  
+      - run: |  
   echo "LAST_COMMIT_SHA=${GITHUB_SHA}" >> ${GITHUB_ENV}
       - run: echo ${{GITHUB_SHA}}
    
