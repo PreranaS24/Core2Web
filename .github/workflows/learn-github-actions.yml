@@ -13,10 +13,10 @@ jobs:
       # Format of the steps output context.
     # Can be 'space-delimited', 'csv', or 'json'.
     # Default: 'space-delimited'
-        format: ''
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
         fetch-depth: 2
+        format: ''
         ref: ${{ github.event.pull_request.head.sha }}
     #- run: sudo apt update
     #- run: sudo apt install openjdk-8-jdk
