@@ -1,6 +1,7 @@
 name: Core2Web
 run-name: Java Code Run
-on: [push]
+on: 
+  push:
 jobs:
   Run_Java_Code:
     runs-on: ubuntu-latest
@@ -13,7 +14,11 @@ jobs:
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
-        fetch-depth: 2
+        fetch-depth: 0
+        
+    - name: get file changes
+        run: | 
+          git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
      #   ref: ${{ github.event.pull_request.head.sha }}
     
     ######- run: echo "{{$GITHUB_SHA}}"
