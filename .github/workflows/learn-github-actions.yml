@@ -24,7 +24,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.token }}
   
 
-    - run: echo "${{ steps.version.outputs.coverage }}"
+     - run: echo "${{ steps.version.outputs.coverage }}"
    # - run: ${{steps.version.outputs.name}}
    # - run: echo "${{steps.version.outputs.name}}" 
     
