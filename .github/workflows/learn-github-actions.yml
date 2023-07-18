@@ -45,9 +45,9 @@ jobs:
       #with:
        # tag_name: ${{ env.TAG_NAME }}
 
-    - run: echo"${{steps.version.outputs.coverage}}"
+    - run: echo"${{ steps.version.outputs.coverage }}"
     - run: ${{steps.version.outputs.name}}
-    - run: echo"${{steps.version.outputs.name}}
+    - run: echo"${{steps.version.outputs.name}}"
     
     - name: Set the value
       id: step_one
