@@ -29,15 +29,17 @@ jobs:
           done
         
         
-       - name: compile
-       with:
+   Run_Java_Code:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            java file
-          done
-		 
-          
+    - run: sudo apt update
+    - run: sudo apt install openjdk-8-jdk
+   # - run: java ${{$GITHUB_SHA}}
+    - run: java -version
       
         

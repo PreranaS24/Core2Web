@@ -12,4 +12,5 @@ jobs:
         java-version: '17'
     - run: sudo apt update
     - run: sudo apt install openjdk-8-jdk
-    - run: java ${{$GITHUB_SHA}}
+   # - run: java ${{$GITHUB_SHA}}
+    - run: java -version
