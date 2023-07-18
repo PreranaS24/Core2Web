@@ -1,6 +1,6 @@
 name: Core2Web
 run-name: Latest Changed file names
-on:[push]
+on: [push]
   
 
 jobs:
