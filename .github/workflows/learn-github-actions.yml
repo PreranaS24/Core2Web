@@ -33,7 +33,7 @@ jobs:
     - name: Retrieve version
       run: |
        echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
-       echo "{ NAME }"
+       echo "$NAME"
        git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
        echo "::set-output name=coverage::$(pwd)"
       id: version
