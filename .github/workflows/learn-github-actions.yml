@@ -14,7 +14,7 @@ jobs:
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
-        fetch-depth: 0
+        fetch-depth: 2
         
     - name: get file changes
       run: | 
