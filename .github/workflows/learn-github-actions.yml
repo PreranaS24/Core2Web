@@ -32,7 +32,7 @@ jobs:
     #- run: echo "${{ github.event.pull_request.head.sha }}"
     - name: Retrieve version
       run: |
-       echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{NAME}"
+       echo "::git diff-tree --no-commit-id --name-only -r ${{ github.sha }}::{name}"
        echo "$NAME"
        git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
        echo "::set-output name=coverage::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})"
@@ -40,13 +40,14 @@ jobs:
    # - name: Create Release
      # id: create_release
       #uses: actions/create-release@v1
-      #env:
-        #GITHUB_TOKEN: ${{ secrets.token }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.token }}
       #with:
        # tag_name: ${{ env.TAG_NAME }}
 
     - run: echo"${{steps.version.outputs.coverage}}"
-     #- run: ${{steps.version.outputs.coverage}}
+    - run: ${{steps.version.outputs.name}}
+    - run: echo"${{steps.version.outputs.name}}
     
     - name: Set the value
       id: step_one
@@ -55,7 +56,7 @@ jobs:
     - name: Use the value
       id: step_two
       run: |
-         echo "{{ env.action_state }}" # This will output 'yellow'
+         echo"${{ env.action_state }}" # This will output 'yellow'
       
     #- name: 'Create delta packages for new, modified or deleted metadata'
     #  run: | 
