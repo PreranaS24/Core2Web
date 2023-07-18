@@ -4,19 +4,15 @@ on:
   push: 
     paths: 
         - '**.java'
+        
+    shell: bash  
 jobs:
   Run-Java-Code:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      
-        with:
-          distribution: 'oracle'
-          java-version: '17'
-      - run: sudo apt update
-      - run: sudo apt install openjdk-17-jdk
-     
-       shell: bash  
+                        
+       
       - run: |  
   echo "LAST_COMMIT_SHA=${GITHUB_SHA}" >> ${GITHUB_ENV}
       - run: echo ${{GITHUB_SHA}}
