@@ -10,8 +10,8 @@ jobs:
       with:
         distribution:  'oracle' # See 'Supported distributions' for available options
         java-version: '17'
-    - run: sudo apt update
-    - run: sudo apt install openjdk-8-jdk
+    #- run: sudo apt update
+    #- run: sudo apt install openjdk-8-jdk
    # - run: java ${{$GITHUB_SHA}}
     - run: java -version
-    - run: javac ${{ github.event.pull_request.head.sha }}
+    - run: echo "${{ github.event.pull_request.head.sha }}"
