@@ -1,5 +1,12 @@
-//WAP to find the numbers of even and odd elements of an array
-//
+/*WAP to search a specific element from an array and return its index.
+ *
+ * Input : 1 2 4 5 6
+ * 
+ * Enter element to search: 4
+ * Output : Element found at index: 2
+ *
+*/
+
 import java.util.*;
 
 class Program4_SearchElement_PrintIndex_Array{

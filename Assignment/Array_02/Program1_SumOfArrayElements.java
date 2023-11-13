@@ -1,5 +1,16 @@
-//WAP to print sum of array elements
-//
+/*	WAP to create an array of 'n' integer elements.
+ *	Where 'n' value should be taken from the user.
+ *	Insert the values from the users and find the sum of all elementsin the array.
+ *
+ *	Input:
+ *	n = 6
+ *	
+ *	Enter elements in the array: 2 3 6 9 5 1
+ *
+ *	Output:
+ *	26
+ */
+
 import java.util.*;
 
 class Program1_SumOfArrayElements{

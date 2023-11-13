@@ -1,4 +1,15 @@
-//WAP to find common elements between two arrays
+/*WAP to find the common elements between two arrays.
+ * 
+ * Input :
+ * Enter first array : 1 2 3 5
+ * Enter second array : 2 1 9 8
+ *
+ * Output :
+ * Common Elements : 
+ * 1
+ * 2
+ * 
+ */ 
 
 class Program7_CommonElementsBetweenTwoArrays{
 

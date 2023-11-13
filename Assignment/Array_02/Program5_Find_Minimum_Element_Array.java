@@ -1,5 +1,12 @@
-//WAP to find the numbers of even and odd elements of an array
-//
+/*WAP to take size of array from user and also take integer elements from user.
+ * Find the minimum element from the array.
+ * 
+ * Input : Enter size : 5
+ * Enter array elements: 1 2 5 0 4
+ *
+ * Output: min element = 0
+ *
+*/
 import java.util.*;
 
 class Program5_Print_Minimum_Element_Array{
