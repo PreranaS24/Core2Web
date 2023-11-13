@@ -1,5 +1,14 @@
-//WAP to find the numbers of even and odd elements of an array
-//
+/*WAP to find the numbers of even and odd integers in a given array of integers
+ *
+ * Input: 1 2 5 4 6 7 8
+ *
+ * Output:
+ *
+ * Number of even elements : 4
+ * Number of Odd elements : 3
+*/
+
+
 import java.util.*;
 
 class Program2_CountEvenOddArrayElements{

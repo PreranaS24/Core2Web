@@ -1,5 +1,15 @@
-//WAP to find the numbers of even and odd elements of an array
-//
+/*WAP to find the sum of even and odd numbers in an array.
+ * Display the sum value.
+ *
+ * Input : 11 12 13 1 4 15
+ *
+ * Output :
+ *
+ * Odd numbers sum : 39
+ * Even numbers sum : 26
+*/
+
+
 import java.util.*;
 
 class Program3_EvenSum_OddSum_Array{

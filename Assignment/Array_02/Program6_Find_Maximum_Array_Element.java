@@ -1,5 +1,13 @@
-//WAP to find the numbers of even and odd elements of an array
-//
+/* WAP to take size of array from user and also take integer elements from user.
+ * Find the maximum element from the array.
+ *
+ * Input: Enter size : 5
+ *
+ * Enter array elements : 1 2 5 0 4
+ *
+ * Output: max element = 5
+ *
+*/
 import java.util.*;
 
 class Program6_Print_Maximum_Element_Array{
