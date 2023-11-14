@@ -1,0 +1,10 @@
+			
+
+
+				Switch Case Assignment 1
+
+		Dry run every program in the book.
+		
+		Take input from user.
+
+		Solve these codes using switch case.
